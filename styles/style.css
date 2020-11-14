@@ -247,7 +247,9 @@ html {
 }
 
 body {
-  background: linear-gradient(45deg, blue, red) no-repeat;
+  background-color: #58635e;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 main {
@@ -255,6 +257,7 @@ main {
 }
 
 .grid {
+  background-image: url("../assets/background.jpeg");
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 125px 125px 125px 125px;
@@ -266,31 +269,106 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #e1ce7a;
+  width: 100%;
+  padding: 40px 0;
+  border-radius: 15px;
+  -webkit-box-shadow: inset 0px 1px 4px 6px #0C0D0F;
+  box-shadow: inset 0px 1px 4px 6px #0C0D0F;
+  margin: 0 auto;
+  -webkit-perspective: 500px;
+          perspective: 500px;
 }
 
 .card {
   border: 2px solid black;
-  background-color: green;
+  height: 125px;
+  width: 125px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.cardFace {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.cardFace img {
+  position: absolute;
+}
+
+.cardFront {
+  display: none;
+}
+
+.cardFront.visible {
+  display: block;
+}
+
+.cardBack {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.card.visible .cardFront {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.card.visible .cardBack {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+
+.card:hover {
+  -webkit-box-shadow: 0px 0px 8px 5px #F7F7F7;
+  box-shadow: 0px 0px 8px 5px #F7F7F7;
+}
+
+.claw {
+  display: none;
+}
+
+.claw.visible {
+  display: inline;
 }
 
 .card .faceBack {
-  visibility: hidden;
+  display: none;
 }
 
 .card .faceFront {
   visibility: visible;
+  -webkit-transition: rotateY(0deg) 0.5s ease-in-out;
+  transition: rotateY(0deg) 0.5s ease-in-out;
+}
+
+.card .faceFront:active {
+  -webkit-transform: rotateY(180deg) 0.5s ease-in-out;
+          transform: rotateY(180deg) 0.5s ease-in-out;
 }
 
 .gameStats {
-  -ms-grid-column: 1;
-      grid-column-start: 1;
-  grid-column-end: -1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.gameStats p {
+  font-family: serif;
+  font-size: 2rem;
+  font-style: normal;
+  padding: 0;
+  margin: 20px 0;
 }
 
 img {
@@ -298,6 +376,7 @@ img {
      object-fit: cover;
   width: 100%;
   height: 125px;
+  border-radius: 15px;
 }
 
 .faceDown {
@@ -305,7 +384,7 @@ img {
      object-fit: cover;
   width: 100%;
   height: 100%;
-  visibility: hidden;
+  display: hidden;
 }
 
 .faceUp {
@@ -317,10 +396,113 @@ img {
 }
 
 h1 {
-  font-family: 'Creepster', cursive;
-  font-size: 7rem;
+  font-family: serif;
+  font-size: 5rem;
   width: 100%;
-  padding: 10px 0 60px 0;
   margin: 0;
   text-align: center;
+  color: black;
+  font-weight: 200;
+  font-style: normal;
+  margin: 50px 0;
+}
+
+.overlay {
+  position: fixed;
+  /* Sit on top of the page content */
+  display: none;
+  /* Hidden by default */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
+  color: #e1ce7a;
+  font-family: serif;
+}
+
+.overlay.visible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: overlay-grow 500ms forwards;
+          animation: overlay-grow 500ms forwards;
+}
+
+@-webkit-keyframes overlay-grow {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 3.5rem;
+  }
+}
+
+@keyframes overlay-grow {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 3.5rem;
+  }
+}
+
+#gameOver {
+  text-transform: uppercase;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#gameOver p {
+  display: block;
+  margin: 5px 0;
+  padding: 0;
+  font-size: 1.5rem;
+}
+
+#gameOver button {
+  display: block;
+  font-size: 2rem;
+}
+
+.fa-caret-right {
+  -webkit-animation: shake 0.6s infinite alternate ease-in-out;
+          animation: shake 0.6s infinite alternate ease-in-out;
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(0.4em);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(0.4em);
+  }
 }
