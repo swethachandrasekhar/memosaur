@@ -409,32 +409,39 @@ myApp.cardClickEventListener = function () {
     const diffultyLevel = $(this).attr('value');
     if (diffultyLevel === 'easy') {
       
-      $(".grid").css({ 
-        "grid-template-columns": "repeat(4, 100px)",
-        "grid-template-rows":"repeat(4, 100px)",
-        // "justify-content": "space-evenly"
-      });
+      // $(".grid").css({ 
+      //   "grid-template-columns": "repeat(4, 100px)",
+      //   // "grid-template-rows":"repeat(4, 100px)",
+      //   // "justify-content": "space-evenly"
+      // });
+      $('.grid').toggleClass('gridOne')
+      $('.grid').removeClass('gridTwo').removeClass('gridThree')
       myApp.createCardsStack(4, 4);
     
 
     }
     else if (diffultyLevel === 'medium'){
-      $(".grid").css({
-        "grid-template-columns": "repeat(8,100px)", 
-        "grid-template-rows": "repeat(4, 100px)",
-        "justify-content": "center"
+    //   $(".grid").css({
+    //     "grid-template-columns": "repeat(8,100px)", 
+    //     // "grid-template-rows": "repeat(4, 100px)",
+    //     "justify-content": "center"
         
-     });
+    //  });
+    $('.grid').toggleClass('gridTwo')
+      $('.grid').removeClass('gridOne').removeClass('gridThree')
       myApp.createCardsStack(4, 8);
       
     }
     else if (diffultyLevel === 'hard'){
-      $(".grid").css({
-        "grid-template-columns": "repeat(10, 85px)", 
-        "grid-template-rows": "repeat(5, 85px)",
-        "justify-content": "center"
+      // $(".grid").css({
+      //   "grid-template-columns": "repeat(10, 100px)", 
+      //   // "grid-template-rows": "repeat(5, 85px)",
+      //   "justify-content": "center"
         
-      });
+      // });
+
+      $('.grid').toggleClass('gridThree')
+      $('.grid').removeClass('gridOne').removeClass('gridTwo')
       myApp.createCardsStack(5, 10)
       
     }
@@ -454,10 +461,13 @@ myApp.cardClickEventListener = function () {
 };
 
 myApp.init = () => {
-  myApp.createCardsStack(3,3);
+  myApp.createCardsStack();
   myApp.cardClickEventListener();
 };
 
+
+
 $(function () {
+
   myApp.init();
 });

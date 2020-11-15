@@ -15,13 +15,13 @@ body {
 }
 
 main {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 h2 {
     margin: 0px 0 55px 0;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 .lineBreak {
     display: block;
@@ -29,15 +29,18 @@ h2 {
 .grid {
     background-image: url('../assets/background.jpeg');
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(4, 100px);
+    // grid-template-columns: repeat(4, 100px);
+    // // grid-template-rows: repeat(4, 100px);
+    // grid-auto-rows: 100px;
+    // grid-template-rows: repeat();
     gap: 15px;
     justify-content: center;
     align-items: center;
     background-color: #e1ce7a;
-    width: 100%;    
+    width: fit-content;    
     height: 100%;
-    padding: 40px 0;
+    padding: 40px 20px;
+    min-width: 600px;
     border-radius: 15px;
     -webkit-box-shadow: inset 0px 1px 4px 6px #0C0D0F; 
     box-shadow: inset 0px 1px 4px 6px #0C0D0F;
@@ -45,6 +48,23 @@ h2 {
     perspective: 500px;
 }
 
+.gridOne {
+    grid-template-columns: repeat(4, 100px);
+    // grid-template-rows: repeat(4, 100px);
+    grid-auto-rows: 100px;
+}
+
+.gridTwo {
+    grid-template-columns: repeat(8, 80px);
+    // grid-template-rows: repeat(4, 100px);
+    grid-auto-rows: 80px;
+}
+
+.gridThree {
+    grid-template-columns: repeat(10, 70px);
+    // grid-template-rows: repeat(4, 100px);
+    grid-auto-rows: 70px;
+}
 
 .card {
    
@@ -132,22 +152,32 @@ display: none;
 
 //difficulty level styling of form elements
 .playAndDifficulty {
+
     p {
         font-size: 1.5rem;
         text-align: center;
-        margin: 10px 0 0 0;
+        margin: 5px 0 0 0;
         padding: 0;
+    }
+
+    input[type=radio], label {
+        font-size: 1.2rem;
     }
 
 }
 
-form {
+.playAndDifficulty form {
+
     margin: 0;
     padding: 0;
    display: flex;
    justify-content: center;
    align-items: center;
    flex-wrap: wrap;
+
+    p {
+        margin-top: 20px;
+    }
    .difficulty {
        width: 100%;
        font-size: 1.3rem;
@@ -165,12 +195,18 @@ form {
     justify-content: space-around;
     p {
          font-family: serif;
-         font-size: 2rem;
+         font-size: 1.4rem;
          font-style: normal;
          padding: 0;
+         text-transform: uppercase;
          margin:0;
          line-height: normal;
     }
+}
+
+.statsWrapper {
+    width: 60%;
+    margin: 0 auto;
 }
 
 img {
@@ -298,4 +334,93 @@ h1 {
 @keyframes shake {
   0% { -webkit-transform: translateX(0); }
   100% { -webkit-transform: translateX(0.4em); }
+}
+
+
+@media (max-width: 1120px) {
+
+    .statsWrapper {
+        width: 80%;
+    }
+
+    .grid {
+        
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(auto, 100px);
+
+    }
+    .gridOne {
+    grid-template-columns: repeat(4, 100px);
+    // grid-template-rows: repeat(4, 100px);
+    grid-auto-rows: 100px;
+}
+
+.gridTwo {
+    grid-template-columns: repeat(5, 80px);
+    // grid-template-rows: repeat(4, 100px);
+    grid-auto-rows: 80px;
+}
+
+.gridThree {
+    grid-template-columns: repeat(5, 70px);
+    // grid-template-rows: repeat(4, 100px);
+    grid-auto-rows: 70px;
+}
+
+.statsWrapper {
+    width: 65%;
+}
+
+}
+
+@media (max-width: 950px) {
+    .statsWrapper {
+    width: 80%;
+}
+}
+
+@media (max-width: 650px) {
+
+    h1 {
+        font-size: 4rem;
+    }
+    h2 {
+        font-size: 1.3rem;
+        margin: 0 20px 40px 20px;
+    }
+
+     .grid {
+        
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: repeat(auto, 70px);
+    min-width: 300px;
+
+    }
+     .gridOne {
+    grid-template-columns: repeat(4, 70px);
+    // grid-template-rows: repeat(4, 100px);
+    grid-auto-rows:70px;
+    }
+    .gridTwo {
+    grid-template-columns: repeat(5, 70px);
+    // grid-template-rows: repeat(4, 100px);
+    grid-auto-rows: 70px;
+}
+
+
+
+.gameStats {
+    p {
+        font-size: 1.2rem;
+        text-align: center;
+         .timer-text {
+             span {
+                 display: inline-block;
+             }
+         }
+      
+    }
+    // align-items: center;
+    flex-wrap: nowrap;
+}
 }

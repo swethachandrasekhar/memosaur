@@ -241,6 +241,12 @@ html {
   margin: 0 auto;
 }
 
+@media (max-width: 700px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
 @font-face {
   font-family: 'jurassic';
   src: url("/assets/csnpwdtNFI.ttf") format("truetype");
@@ -253,13 +259,13 @@ body {
 }
 
 main {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 h2 {
   margin: 0px 0 55px 0;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .lineBreak {
@@ -270,10 +276,6 @@ h2 {
   background-image: url("../assets/background.jpeg");
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (100px)[4];
-      grid-template-columns: repeat(4, 100px);
-  -ms-grid-rows: (100px)[4];
-      grid-template-rows: repeat(4, 100px);
   gap: 15px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -282,15 +284,36 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   background-color: #e1ce7a;
-  width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: 100%;
-  padding: 40px 0;
+  padding: 40px 20px;
+  min-width: 600px;
   border-radius: 15px;
   -webkit-box-shadow: inset 0px 1px 4px 6px #0C0D0F;
   box-shadow: inset 0px 1px 4px 6px #0C0D0F;
   margin: 0 auto;
   -webkit-perspective: 500px;
           perspective: 500px;
+}
+
+.gridOne {
+  -ms-grid-columns: (100px)[4];
+      grid-template-columns: repeat(4, 100px);
+  grid-auto-rows: 100px;
+}
+
+.gridTwo {
+  -ms-grid-columns: (80px)[8];
+      grid-template-columns: repeat(8, 80px);
+  grid-auto-rows: 80px;
+}
+
+.gridThree {
+  -ms-grid-columns: (70px)[10];
+      grid-template-columns: repeat(10, 70px);
+  grid-auto-rows: 70px;
 }
 
 .card {
@@ -373,11 +396,15 @@ h2 {
 .playAndDifficulty p {
   font-size: 1.5rem;
   text-align: center;
-  margin: 10px 0 0 0;
+  margin: 5px 0 0 0;
   padding: 0;
 }
 
-form {
+.playAndDifficulty input[type=radio], .playAndDifficulty label {
+  font-size: 1.2rem;
+}
+
+.playAndDifficulty form {
   margin: 0;
   padding: 0;
   display: -webkit-box;
@@ -393,13 +420,17 @@ form {
       flex-wrap: wrap;
 }
 
-form .difficulty {
+.playAndDifficulty form p {
+  margin-top: 20px;
+}
+
+.playAndDifficulty form .difficulty {
   width: 100%;
   font-size: 1.3rem;
   font-weight: bold;
 }
 
-form .level {
+.playAndDifficulty form .level {
   margin: 10px 20px;
 }
 
@@ -413,11 +444,17 @@ form .level {
 
 .gameStats p {
   font-family: serif;
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-style: normal;
   padding: 0;
+  text-transform: uppercase;
   margin: 0;
   line-height: normal;
+}
+
+.statsWrapper {
+  width: 60%;
+  margin: 0 auto;
 }
 
 img {
@@ -554,5 +591,79 @@ h1 {
   }
   100% {
     -webkit-transform: translateX(0.4em);
+  }
+}
+
+@media (max-width: 1120px) {
+  .statsWrapper {
+    width: 80%;
+  }
+  .grid {
+    -ms-grid-columns: (100px)[4];
+        grid-template-columns: repeat(4, 100px);
+    -ms-grid-rows: (100px)[auto];
+        grid-template-rows: repeat(auto, 100px);
+  }
+  .gridOne {
+    -ms-grid-columns: (100px)[4];
+        grid-template-columns: repeat(4, 100px);
+    grid-auto-rows: 100px;
+  }
+  .gridTwo {
+    -ms-grid-columns: (80px)[5];
+        grid-template-columns: repeat(5, 80px);
+    grid-auto-rows: 80px;
+  }
+  .gridThree {
+    -ms-grid-columns: (70px)[5];
+        grid-template-columns: repeat(5, 70px);
+    grid-auto-rows: 70px;
+  }
+  .statsWrapper {
+    width: 65%;
+  }
+}
+
+@media (max-width: 950px) {
+  .statsWrapper {
+    width: 80%;
+  }
+}
+
+@media (max-width: 650px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+    margin: 0 20px 40px 20px;
+  }
+  .grid {
+    -ms-grid-columns: (70px)[4];
+        grid-template-columns: repeat(4, 70px);
+    -ms-grid-rows: (70px)[auto];
+        grid-template-rows: repeat(auto, 70px);
+    min-width: 300px;
+  }
+  .gridOne {
+    -ms-grid-columns: (70px)[4];
+        grid-template-columns: repeat(4, 70px);
+    grid-auto-rows: 70px;
+  }
+  .gridTwo {
+    -ms-grid-columns: (70px)[5];
+        grid-template-columns: repeat(5, 70px);
+    grid-auto-rows: 70px;
+  }
+  .gameStats {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .gameStats p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .gameStats p .timer-text span {
+    display: inline-block;
   }
 }
