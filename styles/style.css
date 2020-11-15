@@ -236,7 +236,7 @@ html {
 }
 
 .wrapper {
-  max-width: 800px;
+  max-width: 1050px;
   width: 90%;
   margin: 0 auto;
 }
@@ -256,12 +256,24 @@ main {
   height: 100vh;
 }
 
+h2 {
+  margin: 0px 0 55px 0;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.lineBreak {
+  display: block;
+}
+
 .grid {
   background-image: url("../assets/background.jpeg");
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 125px 125px 125px 125px;
-      grid-template-columns: 125px 125px 125px 125px;
+  -ms-grid-columns: (100px)[4];
+      grid-template-columns: repeat(4, 100px);
+  -ms-grid-rows: (100px)[4];
+      grid-template-rows: repeat(4, 100px);
   gap: 15px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -271,6 +283,7 @@ main {
           align-items: center;
   background-color: #e1ce7a;
   width: 100%;
+  height: 100%;
   padding: 40px 0;
   border-radius: 15px;
   -webkit-box-shadow: inset 0px 1px 4px 6px #0C0D0F;
@@ -282,8 +295,8 @@ main {
 
 .card {
   border: 2px solid black;
-  height: 125px;
-  width: 125px;
+  height: 100%;
+  width: 100%;
   border-radius: 15px;
   position: relative;
 }
@@ -302,6 +315,8 @@ main {
 
 .cardFace img {
   position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .cardFront {
@@ -355,6 +370,39 @@ main {
           transform: rotateY(180deg) 0.5s ease-in-out;
 }
 
+.playAndDifficulty p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+form .difficulty {
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+form .level {
+  margin: 10px 20px;
+}
+
 .gameStats {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -368,15 +416,17 @@ main {
   font-size: 2rem;
   font-style: normal;
   padding: 0;
-  margin: 20px 0;
+  margin: 0;
+  line-height: normal;
 }
 
 img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
-  height: 125px;
+  height: 100%;
   border-radius: 15px;
+  background-color: white;
 }
 
 .faceDown {
@@ -400,11 +450,11 @@ h1 {
   font-size: 5rem;
   width: 100%;
   margin: 0;
+  padding: 20px 0 10px 0;
   text-align: center;
   color: black;
   font-weight: 200;
   font-style: normal;
-  margin: 50px 0;
 }
 
 .overlay {

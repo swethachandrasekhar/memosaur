@@ -19,12 +19,14 @@
     <main class="wrapper">
         <header>
             <h1>MEMORY GAME</h1>
+            <h2>Train your brain! Play this game every day. Keep your brain in shape!
+            <span class="lineBreak"> Find pairs of images under the following tiles:</span></h2>
         </header>
         <div id="game-start" class="overlay">
             Click to Start
         </div>
 
-        <div id="gameOver" class="overlay visible">
+        <!-- <div id="gameOver" class="overlay visible">
             You Did It!
             <p>You finished the game in <span class="totalTime"></span> minutes</p>
             <p>With a <span class="ratingStar"></span> rating</p>
@@ -33,8 +35,13 @@
 
             </button>
 
-        </div>
+        </div> -->
 
+        </div>
+        <div class="gameStats">
+            <p class="timer-text">Timer <span id="minutes"></span>:<span id="seconds"></span></p>
+            <p class="moves-text">Moves <span id="moves-count">0</span></p>
+            <p class="timer-text">Successful Moves <span id="success-count">0</span></p>
         </div>
 
         <section id="gameGrid">
@@ -53,20 +60,34 @@
                 </div>` -->
 
             </div>
-            <div class="gameStats">
-                <p class="timer-text">Timer <span id="minutes"></span>:<span id="seconds"></span></p>
-                <p class="moves-text">Moves <span id="moves-count">0</span></p>
-                <p class="timer-text">Successful Moves <span id="success-count">0</span></p>
+            <div class="playAndDifficulty">
+                <p>Click on two tiles to find  matching images</p>
+                <form action="">
+                    <p class="difficulty">Select difficulty level</p>
+                    <div class="level">
+                    <input type="radio" id="easy" name="difficulty" value="easy" checked>
+                    <label for="easy">Easy</label><br>
+                    </div>
+                    <div class="level">
+                    <input type="radio" id="medium" name="difficulty" value="medium">
+                    <label for="medium">Medium</label><br>
+                    </div>
+                    <div class="level">
+                    <input type="radio" id="hard" name="difficulty" value="hard">
+                    <label for="hard">hard</label>
+                    </div>
+                </form>
             </div>
+            
 
         </section>
 
         <section id="gameRules">
 
         </section>
-        <!-- <audio id="gameAudio1" src="assets/audio/320181__dland__hint.wav">          
+        <audio id="gameAudio1" src="assets/audio/320181__dland__hint.wav">          
         </audio>
-        <audio id="gameAudio2" src="assets/audio/89550__cgeffex__dinosaur-loud-roar2.mp3" ></audio> -->
+        <audio id="gameAudio2" src="assets/audio/89550__cgeffex__dinosaur-loud-roar2.mp3" ></audio>
     </main>
     <footer>
         <p class="copyRights">Copyright © 2020 <a href="https://junocollege.com/">Juno College</a></p>
