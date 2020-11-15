@@ -5,29 +5,55 @@
 
 
 body {
-    // background-image: url('../assets/background.jpeg');
-    background-color:#58635e;
-    // #424b54;
-    background-repeat: no-repeat;
-    background-size: cover;
-    // background: linear-gradient( 45deg, black, darkgrey ) no-repeat;
+       
+    background: -webkit-radial-gradient(center, #EEC779, #0B0902);
+background: -moz-radial-gradient(center, #EEC779, #0B0902);
+background: radial-gradient(ellipse at center, #EEC779, #0B0902);
+
+    color: #DFE0DF;
+    font-family: 'Open Sans', sans-serif;
     
 }
 
+
+
 main {
     min-height: 100vh;
+    
+}
+header {
+    padding: 20px 0;
+  
+}
+
+.backgroundContainer {
+    padding: 25px 0;
+   
+    // opacity: 0.6;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background: #EEC779;
+
+    
+    
+    min-height: 100vh;
+
 }
 
 h2 {
-    margin: 0px 0 55px 0;
+    margin: 10px 0;
     text-align: center;
     font-size: 1.4rem;
+    letter-spacing: 2px;
+    line-height: 33px;
+    // color: black;
 }
 .lineBreak {
     display: block;
 }
 .grid {
-    background-image: url('../assets/background.jpeg');
+    // background-image: url('../assets/background.jpeg');
+    background-color: #DAC293;
     display: grid;
     // grid-template-columns: repeat(4, 100px);
     // // grid-template-rows: repeat(4, 100px);
@@ -36,7 +62,7 @@ h2 {
     gap: 15px;
     justify-content: center;
     align-items: center;
-    background-color: #e1ce7a;
+    // background-color: #e1ce7a;
     width: fit-content;    
     height: 100%;
     padding: 40px 20px;
@@ -152,6 +178,7 @@ display: none;
 
 //difficulty level styling of form elements
 .playAndDifficulty {
+    
 
     p {
         font-size: 1.5rem;
@@ -161,6 +188,8 @@ display: none;
     }
 
     input[type=radio], label {
+         font-family: 'Open Sans', sans-serif;
+     letter-spacing: 2px;
         font-size: 1.2rem;
         text-transform: capitalize;
     }
@@ -195,7 +224,7 @@ display: none;
     display: flex;
     justify-content: space-around;
     p {
-         font-family: serif;
+         font-family: 'Open Sans', sans-serif;
          font-size: 1.4rem;
          font-style: normal;
          padding: 0;
@@ -206,7 +235,7 @@ display: none;
 }
 
 .statsWrapper {
-    width: 60%;
+    width: 45%;
     margin: 0 auto;
 }
 
@@ -240,16 +269,16 @@ img {
 }
 
 h1 {
-    // font-family: 'Creepster', cursive;
-    font-family: serif;
+    font-family: 'Fredericka the Great', cursive;
+    
     font-size: 5rem;
     width: 100%;
     // padding:  10px 0 60px 0;
-    margin: 0;
-    padding: 20px 0 10px 0;
+    margin: 10px;
+    padding: 0;
     text-align: center;
     // color: #810000;
-    color: black;
+    color: #DFE0DF;
     font-weight: 200;
     font-style: normal;
 
@@ -387,7 +416,8 @@ h1 {
     }
     h2 {
         font-size: 1.3rem;
-        margin: 0 20px 40px 20px;
+        margin: 0 10px;
+        
     }
 
      .grid {
@@ -409,20 +439,26 @@ h1 {
     grid-auto-rows: 70px;
 }
 
-
+    .statsWrapper {
+    width: 80%;
+}
 
 .gameStats {
     p {
         font-size: 1.2rem;
         text-align: center;
-         .timer-text {
+        
              span {
                  display: inline-block;
              }
-         }
-      
+
     }
-    // align-items: center;
+    #moves-count,#success-count,.timerStyle {
+             
+                 display: block;
+             
+            }
+    justify-content: space-between;
     flex-wrap: nowrap;
 }
 }

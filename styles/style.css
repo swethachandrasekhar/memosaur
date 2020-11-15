@@ -241,6 +241,10 @@ html {
   margin: 0 auto;
 }
 
+main {
+  background-image: url("/assets/background.jpeg");
+}
+
 @media (max-width: 700px) {
   .wrapper {
     width: 100%;
@@ -253,19 +257,32 @@ html {
 }
 
 body {
-  background-color: #58635e;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: radial-gradient(ellipse at center, #EEC779, #0B0902);
+  color: #DFE0DF;
+  font-family: 'Open Sans', sans-serif;
 }
 
 main {
   min-height: 100vh;
 }
 
+header {
+  padding: 20px 0;
+}
+
+.backgroundContainer {
+  padding: 25px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
 h2 {
-  margin: 0px 0 55px 0;
+  margin: 10px 0;
   text-align: center;
   font-size: 1.4rem;
+  letter-spacing: 2px;
+  line-height: 33px;
 }
 
 .lineBreak {
@@ -273,7 +290,7 @@ h2 {
 }
 
 .grid {
-  background-image: url("../assets/background.jpeg");
+  background-color: #DAC293;
   display: -ms-grid;
   display: grid;
   gap: 15px;
@@ -283,7 +300,6 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #e1ce7a;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -401,6 +417,8 @@ h2 {
 }
 
 .playAndDifficulty input[type=radio], .playAndDifficulty label {
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 2px;
   font-size: 1.2rem;
   text-transform: capitalize;
 }
@@ -444,7 +462,7 @@ h2 {
 }
 
 .gameStats p {
-  font-family: serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.4rem;
   font-style: normal;
   padding: 0;
@@ -454,7 +472,7 @@ h2 {
 }
 
 .statsWrapper {
-  width: 60%;
+  width: 45%;
   margin: 0 auto;
 }
 
@@ -484,13 +502,13 @@ img {
 }
 
 h1 {
-  font-family: serif;
+  font-family: 'Fredericka the Great', cursive;
   font-size: 5rem;
   width: 100%;
-  margin: 0;
-  padding: 20px 0 10px 0;
+  margin: 10px;
+  padding: 0;
   text-align: center;
-  color: black;
+  color: #DFE0DF;
   font-weight: 200;
   font-style: normal;
 }
@@ -637,7 +655,7 @@ h1 {
   }
   h2 {
     font-size: 1.3rem;
-    margin: 0 20px 40px 20px;
+    margin: 0 10px;
   }
   .grid {
     -ms-grid-columns: (70px)[4];
@@ -657,7 +675,13 @@ h1 {
         grid-template-columns: repeat(5, 70px);
     grid-auto-rows: 70px;
   }
+  .statsWrapper {
+    width: 80%;
+  }
   .gameStats {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
@@ -665,8 +689,11 @@ h1 {
     font-size: 1.2rem;
     text-align: center;
   }
-  .gameStats p .timer-text span {
+  .gameStats p span {
     display: inline-block;
+  }
+  .gameStats #moves-count, .gameStats #success-count, .gameStats .timerStyle {
+    display: block;
   }
 }
 
