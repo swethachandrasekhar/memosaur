@@ -372,7 +372,7 @@ matchApp.cardClickEventListener = function () {
 
 //init function always displays the card and calls the function to listen to events
 matchApp.init = () => {
-  matchApp.createCardsStack(2, 2);
+  matchApp.createCardsStack();
   matchApp.cardClickEventListener();
 };
 

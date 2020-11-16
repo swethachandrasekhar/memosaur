@@ -286,10 +286,6 @@ main {
   left: 0;
 }
 
-header {
-  padding: 20px 0;
-}
-
 img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -304,6 +300,7 @@ h1 {
   text-transform: uppercase;
   font-size: 9rem;
   width: 100%;
+  margin: 0;
   padding: 0;
   text-align: center;
   color: #dfe0df;
@@ -314,6 +311,7 @@ h1 {
 h2 {
   font-family: "Open Sans", sans-serif;
   margin: 10px 0;
+  margin-bottom: 40px;
   text-align: center;
   font-size: 2rem;
   letter-spacing: 1px;
