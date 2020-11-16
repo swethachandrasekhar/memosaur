@@ -11,6 +11,12 @@ footer {
     }
 }
 
+@media (max-width:650px) {
+    footer {
+        font-size: 1.6rem;
+    }
+}
+
 // remove hover for mobile devices
 
 @media (hover: hover) { 
