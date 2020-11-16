@@ -1,8 +1,21 @@
 footer {
-    padding: 5px 0;
+    padding: 10px 0;
     margin-top: 40px;
-    font-size: 1.3rem;
+    font-size: 2rem;
     background-color: black;
-    color: white;
+    color: $footerColor;
     text-align: center;
+
+    a{
+         color: $footerColor;
+    }
+}
+
+// remove hover for mobile devices
+
+@media (hover: hover) { 
+    a:hover {
+        color: $anchorHover;
+
+    }
 }

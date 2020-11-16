@@ -4,28 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEMOROSAUR!!!</title>
+    <title>Memosaur!!!</title>
     <script src="https://kit.fontawesome.com/4f84721cc0.js" crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Open+Sans&display=swap"
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Open+Sans&display=swap"
     rel="stylesheet">
-
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
 
-    <a href="#mainContent" class="skipLink">Skip to main content.</a>
+    <!-- Skip link for accessibilty -->
+    <a href="#OverlaySection" class="skipLink">Skip to main content.</a>
 
+    <!-- Header tag includes H1 and H2  -->
     <header class="wrapper">
-        <h1>MEMOSAUR</h1>
+        <h1>Memosaur</h1>
         <h2>Match the Dinsosaur species! A memory game to keep your brain in shape!
             <span class="lineBreak"> Find pairs of images under the following tiles:</span></h2>
     </header>
   
 <main class="wrapper">
        
-       <section>
+       <section id="OverlaySection">
             <div id="gameStart" class="overlay visible">
                 Click to Play!!
             </div>
@@ -35,41 +36,38 @@
                 <p>You finished the game in <span class="totalTime"></span> minutes</p>
                 <p>With a <span class="ratingStar"></span> rating</p>
                 <button class="goAgain">Go again
-                    <i class="fas fa-caret-right"></i>
-
+                    <i class="fas fa-caret-right" aria-label="hidden"></i>
                 </button>
-
             </div>
 
-            </div>
         </section>
-        <section>
+
+        <section id="gameStatSection">
+
             <div class="gameStats statsWrapper">
              
-                <p class="timer-text">Timer 
+                <p class="timerText">Timer 
                     <span class="timerStyle"><span id="minutes"></span>:<span id="seconds"></span></span></p>
-                <p class="moves-text">Moves: <span id="moves-count">0</span></p>
-                <p class="success-text">Successful Moves: <span id="success-count">0</span></p>
+                <p class="movesText">Moves: <span id="movesCount">0</span></p>
+                <p class="successText">Successful Moves: <span id="successCount">0</span></p>
             </div>
+
         </section>
+
         <section id="gameGrid">
-
-
 
             <div class="grid gridOne">
 
-                <!-- <div class="card">
-                    <div class="cardFace cardBack" data-id="${index}">
-                        <img src="${dinos.url}" alt="${dinos.name}">
-                    </div>
-                    <div class="cardFace cardFront visible">
-                        <img src="./assets/claws.png" alt="claws">
-                    </div>
-                </div>` -->
-
+                <!-- Dynamically load the game grid here  -->
             </div>
+
+
+            <!--Display difficulty level  -->
             <div class="playAndDifficulty">
+
                 <p>Click on two tiles to find  matching images</p>
+                
+                <!-- Form to accept difficulty level  -->
                 <form action="">
                     <p class="difficulty">Select difficulty level</p>
                     <div class="level">
@@ -85,23 +83,24 @@
                     <label for="hard">hard</label>
                     </div>
                 </form>
+
             </div>
             
-
         </section>
 
-        <section id="gameRules">
-
-        </section>
+        <!-- inserting audio files here to be used by jquery to plau sound on win  -->
         <audio id="gameAudio1" src="assets/audio/320181__dland__hint.wav">          
         </audio>
         <audio id="gameAudio2" src="assets/audio/89550__cgeffex__dinosaur-loud-roar2.mp3" ></audio>
     
-</main>
+    </main>
+
+    <!-- Footer  -->
     <footer>
         <p class="copyRights">Copyright © 2020 <a href="https://junocollege.com/">Juno College</a></p>
     </footer>
    
+    <!-- Linking jquery library and external script file  -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script src="./scripts/script.js"></script>

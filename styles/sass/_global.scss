@@ -7,6 +7,8 @@ $buttonBackground: #dac293;
 $bodyColor: #dfe0df;
 $gameGridBackground: #dac293;
 $imageBackgroundColor: white;
+$footerColor: #dfe0df;
+$anchorHover: #DF4C11;
 
 //font variables
 $bodyFont: "Open Sans", sans-serif;
@@ -21,6 +23,11 @@ html {
 * {
   padding: 0;
   margin: 0;
+  
+}
+
+title {
+    text-transform: uppercase;
 }
 .wrapper {
     max-width: 1050px;

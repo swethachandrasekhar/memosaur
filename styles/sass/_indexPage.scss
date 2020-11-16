@@ -1,3 +1,5 @@
+//IndexPage Styling
+
 body {
   background: #61502d;
   background: -webkit-radial-gradient(center, #61502d, #000000);
@@ -11,25 +13,62 @@ body {
 main {
   min-height: 80vh;
 }
+/* SKIP LINK  */
+.skipLink {
+  position: absolute;
+  left: -3000px;
+  top: 10px;
+  z-index: 999;
+  background-color: #ffffff;
+  color: #1f2022;
+}
+
+.skipLink:focus {
+  left: 0;
+}
+
+//******** HEADER STYLING******** //
 
 header {
   padding: 20px 0;
 }
 
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background-color: $imageBackgroundColor;
+}
+
+h1 {
+  font-family: $headingFont;
+  text-transform: uppercase;
+  font-size: 9rem;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  color: $headingColor;
+  font-weight: 200;
+  font-style: normal;
+}
 
 h2 {
-    font-family: $bodyFont;
+  font-family: $bodyFont;
   margin: 10px 0;
   text-align: center;
   font-size: 2rem;
   letter-spacing: 1px;
   line-height: 33px;
 }
+
 .lineBreak {
   display: block;
 }
+
+//******** GAME GRID STYLING******** //
+
 .grid {
-  
   background-color: $gameGridBackground;
   display: grid;
   gap: 15px;
@@ -61,6 +100,7 @@ h2 {
   grid-auto-rows: 70px;
 }
 
+//******** CARDS STYLING******** //
 .card {
   border: 2px solid black;
   height: 100%;
@@ -92,18 +132,12 @@ h2 {
   transform: rotateY(180deg);
 }
 
-
 .card.visible .cardFront {
   transform: rotateY(-180deg);
 }
 
 .card.visible .cardBack {
   transform: rotateY(0);
-}
-.card:hover {
-
-  -webkit-box-shadow: 0px 0px 8px 5px #f7f7f7;
-  box-shadow: 0px 0px 8px 5px #f7f7f7;
 }
 
 .claw {
@@ -112,21 +146,21 @@ h2 {
 .claw.visible {
   display: inline;
 }
-.card .faceBack {
-     display: none;
-}
 
-.card .faceFront {
-  visibility: visible;
-  transition: rotateY(0deg) 0.5s ease-in-out;
-}
+// .card .faceFront {
+//   visibility: visible;
+//   transition: rotateY(0deg) 0.5s ease-in-out;
+// }
 
-.card .faceFront:active {
-  transform: rotateY(180deg) 0.5s ease-in-out;
+// .card .faceFront:active {
+//   transform: rotateY(180deg) 0.5s ease-in-out;
+// }
 
-}
 
-//difficulty level styling of form elements
+
+//*********Difficulty level styling of form elements*********//
+
+
 .playAndDifficulty {
   p {
     font-size: 2.2rem;
@@ -165,6 +199,8 @@ h2 {
     margin: 10px 20px;
   }
 }
+
+//*************GAME STATS STYLING ********//
 .gameStats {
   display: flex;
   justify-content: space-around;
@@ -184,44 +220,11 @@ h2 {
   margin: 0 auto;
 }
 
-img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  background-color: $imageBackgroundColor;
-}
 
-.faceDown {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  //visibility: hidden;
-  display: hidden;
-}
-.faceUp {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  visibility: visible;
-}
 
-h1 {
-  font-family:$headingFont;
-  font-size: 9rem;
-  width: 100%;
-  margin: 10px;
-  padding: 0;
-  text-align: center;
-  // color: #810000;
-  color: $headingColor;
-  font-weight: 200;
-  font-style: normal;
-}
-
-// overlay for start, win and restart with share to twitter option
+// overlay for start & Win
 //show ratings
-//difficulty levels
+
 .overlay {
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
@@ -233,14 +236,13 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 10; 
+  z-index: 10;
   cursor: pointer; /* Add a pointer on hover */
   color: $overlayText;
 
-
-  p {
-    font-family: $bodyFont;
-  }
+    p {
+        font-family: $bodyFont;
+    }
 
   button {
     font-family: $bodyFont;
@@ -253,17 +255,6 @@ h1 {
   animation: overlay-grow 500ms forwards;
 }
 
-@keyframes overlay-grow {
-  from {
-    background-color: rgba(0, 0, 0, 0);
-    font-size: 0;
-  }
-
-  to {
-    background-color: rgba(0, 0, 0, 0.8);
-    font-size: 3.5rem;
-  }
-}
 
 #gameOver {
   text-transform: uppercase;
@@ -287,10 +278,24 @@ h1 {
     text-transform: capitalize;
   }
 }
+
 .fa-caret-right {
   animation: shake 0.6s infinite alternate ease-in-out;
 }
 
+// ANIMATIONS FOR GO OVERLAY
+@keyframes overlay-grow {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0;
+  }
+
+  to {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 3.5rem;
+  }
+}
+// ANIMATONS FOR GO AGAIN BUTTON
 @keyframes shake {
   0% {
     -webkit-transform: translateX(0);
@@ -299,6 +304,12 @@ h1 {
     -webkit-transform: translateX(0.4em);
   }
 }
+
+
+
+//*********START MEDIA QUERIES**********//
+
+
 
 @media (max-width: 1120px) {
   .statsWrapper {
@@ -329,19 +340,25 @@ h1 {
   }
 }
 
+
+// FOR TABLETS
+
 @media (max-width: 950px) {
   .statsWrapper {
     width: 80%;
   }
 }
 
+
+//FOR MOBILE PHONES
+
 @media (max-width: 650px) {
   h1 {
     font-size: 6rem;
   }
   h2 {
-    font-size: 2rem;
-    margin: 0 10px;
+    font-size: 1.7rem;
+    margin: 20px 0;
   }
 
   .grid {
@@ -372,12 +389,25 @@ h1 {
         display: inline-block;
       }
     }
-    #moves-count,
-    #success-count,
+    #movesCount,
+    #successCount,
     .timerStyle {
       display: block;
     }
     justify-content: space-between;
     flex-wrap: nowrap;
+  }
+}
+
+//CLEARING HOVER FOR MOBILE SCREENS
+@media (hover: hover) {
+  .card:hover {
+    -webkit-box-shadow: 0px 0px 8px 5px #f7f7f7;
+    box-shadow: 0px 0px 8px 5px #f7f7f7;
+  }
+
+  input[type="radio"]:hover,
+  label:hover {
+    cursor: pointer;
   }
 }
