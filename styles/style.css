@@ -235,6 +235,15 @@ html {
   overflow: hidden;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
 .wrapper {
   max-width: 1050px;
   width: 90%;
@@ -263,17 +272,12 @@ header {
   padding: 20px 0;
 }
 
-.backgroundContainer {
-  padding: 25px 0;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 h2 {
+  font-family: "Open Sans", sans-serif;
   margin: 10px 0;
   text-align: center;
-  font-size: 1.4rem;
-  letter-spacing: 2px;
+  font-size: 2rem;
+  letter-spacing: 1px;
   line-height: 33px;
 }
 
@@ -402,7 +406,7 @@ h2 {
 }
 
 .playAndDifficulty p {
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   text-align: center;
   margin: 5px 0 0 0;
   padding: 0;
@@ -412,7 +416,7 @@ h2 {
 .playAndDifficulty label {
   font-family: "Open Sans", sans-serif;
   letter-spacing: 2px;
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   text-transform: capitalize;
 }
 
@@ -438,7 +442,7 @@ h2 {
 
 .playAndDifficulty form .difficulty {
   width: 100%;
-  font-size: 1.3rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -456,7 +460,7 @@ h2 {
 
 .gameStats p {
   font-family: "Open Sans", sans-serif;
-  font-size: 1.4rem;
+  font-size: 2.2rem;
   font-style: normal;
   padding: 0;
   text-transform: uppercase;
@@ -496,7 +500,7 @@ img {
 
 h1 {
   font-family: "Fredericka the Great", cursive;
-  font-size: 5rem;
+  font-size: 9rem;
   width: 100%;
   margin: 10px;
   padding: 0;
@@ -529,7 +533,6 @@ h1 {
   cursor: pointer;
   /* Add a pointer on hover */
   color: #e1ce7a;
-  font-family: serif;
 }
 
 .overlay p {
@@ -583,13 +586,13 @@ h1 {
   display: block;
   margin: 5px 0;
   padding: 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 #gameOver button {
   font-family: "Open Sans", sans-serif;
   display: block;
-  font-size: 2rem;
+  font-size: 2.5rem;
   border-radius: 10px;
   padding: 10px;
   margin: 15px 0;
@@ -659,10 +662,10 @@ h1 {
 
 @media (max-width: 650px) {
   h1 {
-    font-size: 4rem;
+    font-size: 6rem;
   }
   h2 {
-    font-size: 1.3rem;
+    font-size: 2rem;
     margin: 0 10px;
   }
   .grid {
@@ -671,7 +674,7 @@ h1 {
     -ms-grid-rows: (70px)[auto];
         grid-template-rows: repeat(auto, 70px);
     min-width: 300px;
-    width: 90%;
+    width: 100%;
   }
   .gridOne {
     -ms-grid-columns: (70px)[4];
@@ -694,7 +697,7 @@ h1 {
         flex-wrap: nowrap;
   }
   .gameStats p {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     text-align: center;
   }
   .gameStats p span {
