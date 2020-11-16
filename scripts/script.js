@@ -307,7 +307,7 @@ myApp.compareCards = () => {
         }
         $('#gameAudio2')[0].play();
         // document.getElementById("gameAudio").play();
-        $("#gameOver").addClass("visible");
+        $("#gameOver").toggleClass("visible");
         clearInterval(myApp.timer);
         totalTime =0;
       }
@@ -398,8 +398,10 @@ myApp.gameRestart = () => {
 
 myApp.cardClickEventListener = function () {
   $(".goAgain").on("click", function () {
-    $("#gameOver").removeClass("visible");
+    $("#gameOver").toggleClass("visible");
     myApp.gameRestart();
+    myApp.createCardsStack();
+
   });
 
   $('form').on('change','input', function() {
@@ -458,10 +460,21 @@ myApp.cardClickEventListener = function () {
     }
     myApp.storeCard(this);
   });
+
+
+  $('#gameStart').on('click', function () {
+    $('#gameStart').toggleClass('visible');
+  });
+
+  
+
+  
+
+
 };
 
 myApp.init = () => {
-  myApp.createCardsStack();
+  myApp.createCardsStack(2,2);
   myApp.cardClickEventListener();
 };
 

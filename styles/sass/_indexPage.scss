@@ -1,26 +1,22 @@
-@font-face {
-    font-family: 'jurassic';
-    src: url('/assets/csnpwdtNFI.ttf') format('truetype');
-}
+
 
 
 body {
        
-    background: -webkit-radial-gradient(center, #EEC779, #0B0902);
-background: -moz-radial-gradient(center, #EEC779, #0B0902);
-background: radial-gradient(ellipse at center, #EEC779, #0B0902);
-
-    color: #DFE0DF;
-    font-family: 'Open Sans', sans-serif;
+background: #61502D;
+background: -webkit-radial-gradient(center, #61502D, #000000);
+background: -moz-radial-gradient(center, #61502D, #000000);
+background: radial-gradient(ellipse at center, #61502D, #000000);
+background-repeat: no-repeat;
+color: #DFE0DF;
+font-family: 'Open Sans', sans-serif;
     
 }
-
-
 
 main {
-    min-height: 100vh;
-    
+    min-height: 80vh;
 }
+
 header {
     padding: 20px 0;
   
@@ -33,10 +29,6 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     // background: #EEC779;
-
-    
-    
-    min-height: 100vh;
 
 }
 
@@ -219,8 +211,7 @@ display: none;
    }
 }
 .gameStats {
-    // grid-column-start: 1;
-    // grid-column-end: -1;
+    
     display: flex;
     justify-content: space-around;
     p {
@@ -229,7 +220,7 @@ display: none;
          font-style: normal;
          padding: 0;
          text-transform: uppercase;
-         margin:0;
+         margin:5px;
          line-height: normal;
     }
 }
@@ -289,6 +280,8 @@ h1 {
 //show ratings
 //difficulty levels
 .overlay {
+  
+     
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
   justify-content: center;
@@ -306,14 +299,14 @@ h1 {
   font-family: serif;
 //   font-size: 3rem;
 
-//   p {
-//       font-size: 3rem;
-//       color: white;
-//       position: fixed;
-//       top: 50%;
-//       right: calc(50% - 50px);
-//       z-index: 99999;
-//   }
+p {
+     font-family: 'Open Sans', sans-serif;
+}
+
+button {
+     font-family: 'Open Sans', sans-serif;
+     padding: 15px;
+}
 }
 
 
@@ -349,8 +342,15 @@ h1 {
          font-size: 1.5rem;
     }
     button {
+        font-family: 'Open Sans', sans-serif;
         display:block;
         font-size: 2rem;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 15px 0;
+        line-height: 0;
+        background-color: #DAC293;
+        text-transform: capitalize;
     }
 
   

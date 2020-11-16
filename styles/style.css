@@ -241,29 +241,22 @@ html {
   margin: 0 auto;
 }
 
-main {
-  background-image: url("/assets/background.jpeg");
-}
-
 @media (max-width: 700px) {
   .wrapper {
     width: 100%;
   }
 }
 
-@font-face {
-  font-family: 'jurassic';
-  src: url("/assets/csnpwdtNFI.ttf") format("truetype");
-}
-
 body {
-  background: radial-gradient(ellipse at center, #EEC779, #0B0902);
+  background: #61502D;
+  background: radial-gradient(ellipse at center, #61502D, #000000);
+  background-repeat: no-repeat;
   color: #DFE0DF;
   font-family: 'Open Sans', sans-serif;
 }
 
 main {
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 header {
@@ -274,7 +267,6 @@ header {
   padding: 25px 0;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100vh;
 }
 
 h2 {
@@ -467,7 +459,7 @@ h2 {
   font-style: normal;
   padding: 0;
   text-transform: uppercase;
-  margin: 0;
+  margin: 5px;
   line-height: normal;
 }
 
@@ -540,6 +532,15 @@ h1 {
   font-family: serif;
 }
 
+.overlay p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.overlay button {
+  font-family: 'Open Sans', sans-serif;
+  padding: 15px;
+}
+
 .overlay.visible {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -586,8 +587,15 @@ h1 {
 }
 
 #gameOver button {
+  font-family: 'Open Sans', sans-serif;
   display: block;
   font-size: 2rem;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 15px 0;
+  line-height: 0;
+  background-color: #DAC293;
+  text-transform: capitalize;
 }
 
 .fa-caret-right {
