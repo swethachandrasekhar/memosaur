@@ -109,7 +109,12 @@ const animals = [
     url: "./assets/chimp.jpg",
   },
 ];
+
+// creating a namespace for the project
+
 const matchApp = {};
+
+//Declaring global variables
 matchApp.moves = 0;
 matchApp.resultArray = [];
 matchApp.opened = [];
@@ -208,6 +213,8 @@ matchApp.updateMoves = () => {
 
 matchApp.compareCards = () => {
   //check if the number of opened cards is greater than one
+  // If Number of Cards clicked is less than One then do nothing; Otherwise compare the cards to see if they match
+
   if (matchApp.opened.length === 2) {
     if (matchApp.opened[0].name === matchApp.opened[1].name) {
       //add them to the result array and clear opened array
@@ -311,7 +318,8 @@ matchApp.gameRestart = () => {
 //Store the diccifulty level and make the apprioriate changes to grid generation
 matchApp.storeDifficultyLevel = (diffultyLevel) => {
   if (diffultyLevel === "easy") {
-    //if user is on default choice and clicks on easy again
+    //if user is on default choice and clicks on easy option again: DO NOT TOGGLE  Otherwise toggle Class to GridOne
+
     if ($(".grid").attr("class") !== "grid gridOne") {
       $(".grid").toggleClass("gridOne");
     }
@@ -345,7 +353,11 @@ matchApp.cardClickEventListener = function () {
     clearInterval(matchApp.timer);
     matchApp.timer = 0;
     const diffultyLevel = $(this).attr("value");
-    matchApp.storeDifficultyLevel(diffultyLevel);
+    // If the difficulty level is either easy, medium or hard then store it
+    if (['easy', 'medium','hard'].includes(diffultyLevel)) {
+      
+      matchApp.storeDifficultyLevel(diffultyLevel);
+    }
   });
 
   //When user clicks on a card, store the card
