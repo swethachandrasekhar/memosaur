@@ -147,7 +147,7 @@ matchApp.displayCard = () => {
                         <img  src="${animals.url}" alt="${animals.name}" >
                     </div>
                     <div class="cardFace cardFront visible">
-                        <img  src="./assets/claws.png" alt="claws">
+                        <img  src="./assets/claws.png" alt="Dinosaurs claws marks">
                     </div>
                 </div>`;
 
@@ -201,7 +201,7 @@ matchApp.storeCard = (selectedCardContainer) => {
 
 //Function to Update the Number of Moves counter on the Game Stats
 matchApp.updateMoves = () => {
-  $("#moves-count").html(matchApp.moves);
+  $("#movesCount").html(matchApp.moves);
 };
 
 //Function to Compare the two cards that were opened
@@ -251,7 +251,7 @@ matchApp.compareCards = () => {
 
 //Function to Update the number of successful moves counter on the Game Stats
 matchApp.updateSuccessfulMoves = () => {
-  $("#success-count").html(matchApp.resultArray.length);
+  $("#successCount").html(matchApp.resultArray.length);
 };
 
 //Function to Start the game timer
@@ -298,8 +298,8 @@ matchApp.gameRestart = () => {
   $(".grid").empty();
   $("#seconds").html("00");
   $("#minutes").html("00");
-  $("#success-count").html(0);
-  $("#moves-count").html(0);
+  $("#successCount").html(0);
+  $("#movesCount").html(0);
 
   matchApp.resultArray = [];
   matchApp.opened = [];

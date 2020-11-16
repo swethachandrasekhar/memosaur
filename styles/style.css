@@ -244,6 +244,10 @@ html {
   margin: 0;
 }
 
+title {
+  text-transform: uppercase;
+}
+
 .wrapper {
   max-width: 1050px;
   width: 90%;
@@ -268,8 +272,43 @@ main {
   min-height: 80vh;
 }
 
+/* SKIP LINK  */
+.skipLink {
+  position: absolute;
+  left: -3000px;
+  top: 10px;
+  z-index: 999;
+  background-color: #ffffff;
+  color: #1f2022;
+}
+
+.skipLink:focus {
+  left: 0;
+}
+
 header {
   padding: 20px 0;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background-color: #dfe0df;
+}
+
+h1 {
+  font-family: "Fredericka the Great", cursive;
+  text-transform: uppercase;
+  font-size: 9rem;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  color: #dfe0df;
+  font-weight: 200;
+  font-style: normal;
 }
 
 h2 {
@@ -385,21 +424,6 @@ h2 {
   display: inline;
 }
 
-.card .faceBack {
-  display: none;
-}
-
-.card .faceFront {
-  visibility: visible;
-  -webkit-transition: rotateY(0deg) 0.5s ease-in-out;
-  transition: rotateY(0deg) 0.5s ease-in-out;
-}
-
-.card .faceFront:active {
-  -webkit-transform: rotateY(180deg) 0.5s ease-in-out;
-          transform: rotateY(180deg) 0.5s ease-in-out;
-}
-
 .playAndDifficulty p {
   font-size: 2.2rem;
   text-align: center;
@@ -468,43 +492,6 @@ h2 {
   margin: 0 auto;
 }
 
-img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  background-color: white;
-}
-
-.faceDown {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
-  display: hidden;
-}
-
-.faceUp {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
-  visibility: visible;
-}
-
-h1 {
-  font-family: "Fredericka the Great", cursive;
-  font-size: 9rem;
-  width: 100%;
-  margin: 10px;
-  padding: 0;
-  text-align: center;
-  color: #dfe0df;
-  font-weight: 200;
-  font-style: normal;
-}
-
 .overlay {
   position: fixed;
   /* Sit on top of the page content */
@@ -547,28 +534,6 @@ h1 {
           animation: overlay-grow 500ms forwards;
 }
 
-@-webkit-keyframes overlay-grow {
-  from {
-    background-color: rgba(0, 0, 0, 0);
-    font-size: 0;
-  }
-  to {
-    background-color: rgba(0, 0, 0, 0.8);
-    font-size: 3.5rem;
-  }
-}
-
-@keyframes overlay-grow {
-  from {
-    background-color: rgba(0, 0, 0, 0);
-    font-size: 0;
-  }
-  to {
-    background-color: rgba(0, 0, 0, 0.8);
-    font-size: 3.5rem;
-  }
-}
-
 #gameOver {
   text-transform: uppercase;
   -webkit-box-orient: vertical;
@@ -599,6 +564,28 @@ h1 {
 .fa-caret-right {
   -webkit-animation: shake 0.6s infinite alternate ease-in-out;
           animation: shake 0.6s infinite alternate ease-in-out;
+}
+
+@-webkit-keyframes overlay-grow {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 3.5rem;
+  }
+}
+
+@keyframes overlay-grow {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 3.5rem;
+  }
 }
 
 @-webkit-keyframes shake {
@@ -660,8 +647,8 @@ h1 {
     font-size: 6rem;
   }
   h2 {
-    font-size: 2rem;
-    margin: 0 10px;
+    font-size: 1.7rem;
+    margin: 20px 0;
   }
   .grid {
     -ms-grid-columns: (70px)[4];
@@ -698,8 +685,8 @@ h1 {
   .gameStats p span {
     display: inline-block;
   }
-  .gameStats #moves-count,
-  .gameStats #success-count,
+  .gameStats #movesCount,
+  .gameStats #successCount,
   .gameStats .timerStyle {
     display: block;
   }
@@ -716,19 +703,32 @@ h1 {
   }
 }
 
+@media (hover: hover) {
+  .card:hover {
+    -webkit-box-shadow: 0px 0px 8px 5px #f7f7f7;
+    box-shadow: 0px 0px 8px 5px #f7f7f7;
+  }
+  input[type="radio"]:hover,
+  label:hover {
+    cursor: pointer;
+  }
+}
+
 footer {
   padding: 10px 0;
   margin-top: 40px;
   font-size: 2rem;
   background-color: black;
-  color: white;
+  color: #dfe0df;
   text-align: center;
 }
 
 footer a {
-  color: white;
+  color: #dfe0df;
 }
 
-footer a:hover {
-  color: #ec5858;
+@media (hover: hover) {
+  a:hover {
+    color: #DF4C11;
+  }
 }

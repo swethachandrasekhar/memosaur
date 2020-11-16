@@ -199,13 +199,13 @@ matchApp.compareCards = () => {
    
  matchApp.updateSuccessfulMoves = () => {
    
-    $("#success-count").html(matchApp.resultArray.length);
+    $("#successCount").html(matchApp.resultArray.length);
     
  };
 
  matchApp.updateMoves = () => {
 
-   $("#moves-count").html(matchApp.moves);
+   $("#movesCount").html(matchApp.moves);
  };
 
  matchApp.startTimer = function(){
@@ -237,8 +237,8 @@ matchApp.gameRestart = () => {
     $('.grid').empty();
      $("#seconds").html('00');
      $("#minutes").html('00');
-      $("#success-count").html(0);
-      $("#moves-count").html(0);
+      $("#successCount").html(0);
+      $("#movesCount").html(0);
 
     matchApp.resultArray = [];
     matchApp.opened = [];

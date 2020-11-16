@@ -5,12 +5,17 @@ footer {
     background-color: black;
     color: $footerColor;
     text-align: center;
-    a {
-        color: $footerColor;
-    }
 
-    a:hover {
-        color:$externalLink;
+    a{
+         color: $footerColor;
     }
 }
 
+// remove hover for mobile devices
+
+@media (hover: hover) { 
+    a:hover {
+        color: $anchorHover;
+
+    }
+}
