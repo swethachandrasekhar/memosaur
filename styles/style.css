@@ -479,10 +479,29 @@ h2 {
   font-family: "Open Sans", sans-serif;
   font-size: 2.2rem;
   font-style: normal;
-  padding: 0;
+  padding: 5px;
+  border-radius: 10px;
   text-transform: uppercase;
   margin: 5px;
   line-height: normal;
+  text-align: center;
+}
+
+.gameStats p #movesCount,
+.gameStats p #successCount {
+  background-color: rgba(141, 138, 138, 0.507);
+  padding: 0 5px;
+  border-radius: 7px;
+}
+
+.gameStats .timerStyle {
+  background-color: rgba(141, 138, 138, 0.507);
+  border-radius: 7px;
+}
+
+.gameStats .timerStyle span {
+  background-color: none;
+  padding: 0 5px;
 }
 
 .statsWrapper {
@@ -686,7 +705,7 @@ h2 {
   .gameStats #movesCount,
   .gameStats #successCount,
   .gameStats .timerStyle {
-    display: block;
+    display: inline-block;
   }
 }
 
