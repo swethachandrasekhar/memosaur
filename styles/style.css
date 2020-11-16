@@ -248,11 +248,11 @@ html {
 }
 
 body {
-  background: #61502D;
-  background: radial-gradient(ellipse at center, #61502D, #000000);
+  background: #61502d;
+  background: radial-gradient(ellipse at center, #61502d, #000000);
   background-repeat: no-repeat;
-  color: #DFE0DF;
-  font-family: 'Open Sans', sans-serif;
+  color: #dfe0df;
+  font-family: "Open Sans", sans-serif;
 }
 
 main {
@@ -282,7 +282,7 @@ h2 {
 }
 
 .grid {
-  background-color: #DAC293;
+  background-color: #dac293;
   display: -ms-grid;
   display: grid;
   gap: 15px;
@@ -299,8 +299,8 @@ h2 {
   padding: 40px 20px;
   min-width: 600px;
   border-radius: 15px;
-  -webkit-box-shadow: inset 0px 1px 4px 6px #0C0D0F;
-  box-shadow: inset 0px 1px 4px 6px #0C0D0F;
+  -webkit-box-shadow: inset 0px 1px 4px 6px #0c0d0f;
+  box-shadow: inset 0px 1px 4px 6px #0c0d0f;
   margin: 0 auto;
   -webkit-perspective: 500px;
           perspective: 500px;
@@ -374,8 +374,8 @@ h2 {
 }
 
 .card:hover {
-  -webkit-box-shadow: 0px 0px 8px 5px #F7F7F7;
-  box-shadow: 0px 0px 8px 5px #F7F7F7;
+  -webkit-box-shadow: 0px 0px 8px 5px #f7f7f7;
+  box-shadow: 0px 0px 8px 5px #f7f7f7;
 }
 
 .claw {
@@ -408,8 +408,9 @@ h2 {
   padding: 0;
 }
 
-.playAndDifficulty input[type=radio], .playAndDifficulty label {
-  font-family: 'Open Sans', sans-serif;
+.playAndDifficulty input[type="radio"],
+.playAndDifficulty label {
+  font-family: "Open Sans", sans-serif;
   letter-spacing: 2px;
   font-size: 1.2rem;
   text-transform: capitalize;
@@ -454,7 +455,7 @@ h2 {
 }
 
 .gameStats p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1.4rem;
   font-style: normal;
   padding: 0;
@@ -494,13 +495,13 @@ img {
 }
 
 h1 {
-  font-family: 'Fredericka the Great', cursive;
+  font-family: "Fredericka the Great", cursive;
   font-size: 5rem;
   width: 100%;
   margin: 10px;
   padding: 0;
   text-align: center;
-  color: #DFE0DF;
+  color: #dfe0df;
   font-weight: 200;
   font-style: normal;
 }
@@ -525,7 +526,6 @@ h1 {
   right: 0;
   bottom: 0;
   z-index: 10;
-  /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer;
   /* Add a pointer on hover */
   color: #e1ce7a;
@@ -533,11 +533,11 @@ h1 {
 }
 
 .overlay p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .overlay button {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   padding: 15px;
 }
 
@@ -587,14 +587,14 @@ h1 {
 }
 
 #gameOver button {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   display: block;
   font-size: 2rem;
   border-radius: 10px;
   padding: 10px;
   margin: 15px 0;
   line-height: 0;
-  background-color: #DAC293;
+  background-color: #dac293;
   text-transform: capitalize;
 }
 
@@ -700,7 +700,9 @@ h1 {
   .gameStats p span {
     display: inline-block;
   }
-  .gameStats #moves-count, .gameStats #success-count, .gameStats .timerStyle {
+  .gameStats #moves-count,
+  .gameStats #success-count,
+  .gameStats .timerStyle {
     display: block;
   }
 }

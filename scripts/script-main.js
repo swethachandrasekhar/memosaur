@@ -72,17 +72,17 @@ const dinosaurs = [
 
 const myApp = {};
 
-myApp.moves = 0;
-myApp.firstMove = null;
-myApp.secondMove = null;
-myApp.resultArray = [];
-myApp.flippedCardOne = null;
-myApp.flippedCardTwo = null;
-myApp.resultArray = [];
-myApp.opened = [];
-myApp.moves = 0;
-myApp.timer; 
-myApp.seconds = 0;
+matchApp.moves = 0;
+matchApp.firstMove = null;
+matchApp.secondMove = null;
+matchApp.resultArray = [];
+matchApp.flippedCardOne = null;
+matchApp.flippedCardTwo = null;
+matchApp.resultArray = [];
+matchApp.opened = [];
+matchApp.moves = 0;
+matchApp.timer; 
+matchApp.seconds = 0;
 
 
 
@@ -90,9 +90,9 @@ myApp.seconds = 0;
 
 
 //This function loads the cards on page load
-myApp.displayCard = () => {
+matchApp.displayCard = () => {
 
-        myApp.shuffle(dinosaurs);
+        matchApp.shuffle(dinosaurs);
 
     dinosaurs.forEach((dinos, index) => {
         console.log(dinos, index);
@@ -111,7 +111,7 @@ myApp.displayCard = () => {
 
 //Thanks to Esther for sharing the Fisher-Yates Shuffle Method
 //This function shuffles the cards to create a different card arrangement everytime the user starts the game
-myApp.shuffle = (array) => {
+matchApp.shuffle = (array) => {
 
     var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -126,11 +126,11 @@ myApp.shuffle = (array) => {
 
 }
 
-myApp.isGameOver = () => {    
+matchApp.isGameOver = () => {    
 
 }
     
-myApp.storeCard = (selectedCardContainer) => {
+matchApp.storeCard = (selectedCardContainer) => {
   let cardSide = $(selectedCardContainer).children().eq(0).attr("class");
 
   //check if the user is clicking on the same card
@@ -147,43 +147,43 @@ myApp.storeCard = (selectedCardContainer) => {
     openedCard.name =
       dinosaurs[$(selectedCardContainer).children().eq(0).attr("data-id")].name;
     openedCard.id = $(selectedCardContainer).children().eq(0).attr("data-id");
-    myApp.opened.push({ name: openedCard.name, id: openedCard.id });
-    myApp.moves++;
-    myApp.updateMoves();
-    myApp.compareCards();
+    matchApp.opened.push({ name: openedCard.name, id: openedCard.id });
+    matchApp.moves++;
+    matchApp.updateMoves();
+    matchApp.compareCards();
 
   }
 };
    
-myApp.compareCards = () => {
+matchApp.compareCards = () => {
 //   console.log(selectedCardContainer);
 
   //check if the number of opened cards is greater than one
 
-  if (myApp.opened.length === 2) {
-    if (myApp.opened[0].name === myApp.opened[1].name) {
+  if (matchApp.opened.length === 2) {
+    if (matchApp.opened[0].name === matchApp.opened[1].name) {
       //add them to the result array and clear opened array
-        myApp.opened.forEach((matchedDinos) => {
+        matchApp.opened.forEach((matchedDinos) => {
 
-        myApp.resultArray.push(matchedDinos);
+        matchApp.resultArray.push(matchedDinos);
       });
 
-        myApp.updateSuccessfulMoves();
-        if (myApp.resultArray.length === dinosaurs.length) {
-           let totalTime = myApp.getTotalTime();
-            clearInterval(myApp.timer);
+        matchApp.updateSuccessfulMoves();
+        if (matchApp.resultArray.length === dinosaurs.length) {
+           let totalTime = matchApp.getTotalTime();
+            clearInterval(matchApp.timer);
             $("#gameOver").addClass("visible");
          
         
             // alert(`You have won`);
         //capture the timer and moves
       }
-      myApp.opened = [];
+      matchApp.opened = [];
     } else {
       //close/turn the cards back again with a timeout function
 
       setTimeout(() => {
-        myApp.opened.forEach((card) => {
+        matchApp.opened.forEach((card) => {
             console.log($(`[data-id="${card.id}"]`));
           $(`[data-id="${card.id}"]`)
             .toggleClass("faceFront faceBack");
@@ -191,40 +191,40 @@ myApp.compareCards = () => {
           $(`[data-id="${card.id}"]`).siblings().addClass('visible');
             
         });
-        myApp.opened = [];
+        matchApp.opened = [];
       }, 500);
     }
   } 
 }
    
- myApp.updateSuccessfulMoves = () => {
+ matchApp.updateSuccessfulMoves = () => {
    
-    $("#success-count").html(myApp.resultArray.length);
+    $("#success-count").html(matchApp.resultArray.length);
     
  };
 
- myApp.updateMoves = () => {
+ matchApp.updateMoves = () => {
 
-   $("#moves-count").html(myApp.moves);
+   $("#moves-count").html(matchApp.moves);
  };
 
- myApp.startTimer = function(){
+ matchApp.startTimer = function(){
     //   let seconds = 0;
 
       function pad(val) {
         return val > 9 ? val : "0" + val;
       }
-     myApp.timer = setInterval(() => {
-        $("#seconds").html(pad(++myApp.seconds % 60));
-        $("#minutes").html(pad(parseInt(myApp.seconds / 60, 10)));        
+     matchApp.timer = setInterval(() => {
+        $("#seconds").html(pad(++matchApp.seconds % 60));
+        $("#minutes").html(pad(parseInt(matchApp.seconds / 60, 10)));        
       }, 1000);
 
  }
 
- myApp.getTotalTime = () => {
-    console.log(`seconds`, myApp.seconds);
-    let minutes = parseInt(myApp.seconds / 60, 10);
-    let second = myApp.seconds % 60;
+ matchApp.getTotalTime = () => {
+    console.log(`seconds`, matchApp.seconds);
+    let minutes = parseInt(matchApp.seconds / 60, 10);
+    let second = matchApp.seconds % 60;
     console.log(`${minutes}:${second}`);
     return (`${minutes}${second}`);
 
@@ -232,7 +232,7 @@ myApp.compareCards = () => {
 
 
 
-myApp.gameRestart = () => {
+matchApp.gameRestart = () => {
 
     $('.grid').empty();
      $("#seconds").html('00');
@@ -240,50 +240,50 @@ myApp.gameRestart = () => {
       $("#success-count").html(0);
       $("#moves-count").html(0);
 
-    myApp.resultArray = [];
-    myApp.opened = [];
-    myApp.moves = 0;
-    console.log(`clear all 1${myApp.resultArray.length}`);
-    console.log(`clear all  2${myApp.opened.length}`); 
-    console.log(`clear all 3${myApp.moves}`);
+    matchApp.resultArray = [];
+    matchApp.opened = [];
+    matchApp.moves = 0;
+    console.log(`clear all 1${matchApp.resultArray.length}`);
+    console.log(`clear all  2${matchApp.opened.length}`); 
+    console.log(`clear all 3${matchApp.moves}`);
     
 
    
-    console.log(`timer`,myApp.timer); 
-    myApp.displayCard();
+    console.log(`timer`,matchApp.timer); 
+    matchApp.displayCard();
 
 
 };
 
-myApp.cardClickEventListener = function () {
+matchApp.cardClickEventListener = function () {
 
     $(".goAgain").on("click", function() {
 
         $('#gameOver').removeClass('visible');
-        myApp.gameRestart();
+        matchApp.gameRestart();
 
     });
 
   $(".grid").on("click", ".card", function () {
        // change this to on click of start
-       if(myApp.moves === 0) {
-            myApp.startTimer(); 
+       if(matchApp.moves === 0) {
+            matchApp.startTimer(); 
        }
-        myApp.storeCard(this);
+        matchApp.storeCard(this);
         
   });   
 
 };
 
-myApp.init = () => {
+matchApp.init = () => {
 
     
-    myApp.cardClickEventListener();
+    matchApp.cardClickEventListener();
    
 }
 
 
 $(function () {
  
-    myApp.init();
+    matchApp.init();
 });
