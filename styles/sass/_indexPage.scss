@@ -1,8 +1,7 @@
 //IndexPage Styling
 
 body {
-
-    // creating radial gradient 
+  // creating radial gradient
   background: #61502d;
   background: -webkit-radial-gradient(center, #61502d, #000000);
   background: -moz-radial-gradient(center, #61502d, #000000);
@@ -32,7 +31,7 @@ main {
 //******** HEADER STYLING******** //
 
 header {
-//   padding: 20px 0;
+  //   padding: 20px 0;
 }
 
 img {
@@ -160,10 +159,7 @@ h2 {
 //   transform: rotateY(180deg) 0.5s ease-in-out;
 // }
 
-
-
 //*********Difficulty level styling of form elements*********//
-
 
 .playAndDifficulty {
   p {
@@ -180,8 +176,6 @@ h2 {
     font-size: 1.7rem;
     text-transform: capitalize;
   }
-
- 
 }
 .playAndDifficulty form {
   margin: 0;
@@ -210,7 +204,6 @@ h2 {
   display: flex;
   justify-content: space-around;
   p {
-     
     font-family: $bodyFont;
     font-size: 2.2rem;
     font-style: normal;
@@ -220,33 +213,29 @@ h2 {
     margin: 5px;
     line-height: normal;
     text-align: center;
-  
-     #movesCount,
+
+    #movesCount,
     #successCount {
-        background-color: rgba(141, 138, 138, 0.507);
-        padding: 0 5px ;
-        border-radius: 7px;
+      background-color: rgba(141, 138, 138, 0.507);
+      padding: 0 5px;
+      border-radius: 7px;
     }
-    
-    }
+  }
 
-    .timerStyle {
-        background-color: rgba(141, 138, 138, 0.507);
-        border-radius: 7px;
-        span {
-                background-color: none;
-                 padding: 0 5px ;
-        }
-        }
+  .timerStyle {
+    background-color: rgba(141, 138, 138, 0.507);
+    border-radius: 7px;
+    span {
+      background-color: none;
+      padding: 0 5px;
+    }
+  }
 }
-
 
 .statsWrapper {
   width: 65%;
   margin: 0 auto;
 }
-
-
 
 // overlay for start & Win
 //show ratings
@@ -266,9 +255,9 @@ h2 {
   cursor: pointer; /* Add a pointer on hover */
   color: $overlayText;
 
-    p {
-        font-family: $bodyFont;
-    }
+  p {
+    font-family: $bodyFont;
+  }
 
   button {
     font-family: $bodyFont;
@@ -280,7 +269,6 @@ h2 {
   display: flex;
   animation: overlay-grow 500ms forwards;
 }
-
 
 #gameOver {
   text-transform: uppercase;
@@ -322,7 +310,6 @@ h2 {
   }
 }
 
-
 // ANIMATONS FOR GO AGAIN BUTTON
 @keyframes shake {
   0% {
@@ -332,7 +319,6 @@ h2 {
     -webkit-transform: translateX(0.4em);
   }
 }
-
 
 //*********START MEDIA QUERIES**********//
 
@@ -365,7 +351,6 @@ h2 {
   }
 }
 
-
 // FOR TABLETS
 
 @media (max-width: 950px) {
@@ -373,7 +358,6 @@ h2 {
     width: 80%;
   }
 }
-
 
 //FOR MOBILE PHONES
 
@@ -412,34 +396,26 @@ h2 {
 
       span {
         display: inline-block;
-         
-
       }
     }
     #movesCount,
     #successCount,
     .timerStyle {
       display: inline-block;
-       
-
     }
     justify-content: space-between;
     flex-wrap: nowrap;
   }
-
-  
- 
 }
-@media (hover:none) {
-      .card:hover {
-
-  -webkit-box-shadow: 0px 0px 8px 5px #f7f7f7;
-  box-shadow: 0px 0px 8px 5px #f7f7f7;
-}
-label:hover,
- input[type="radio"]:hover {
+@media (hover: none) {
+  .card:hover {
+    -webkit-box-shadow: 0px 0px 8px 5px #f7f7f7;
+    box-shadow: 0px 0px 8px 5px #f7f7f7;
+  }
+  label:hover,
+  input[type="radio"]:hover {
     cursor: pointer;
-}
+  }
 }
 
 //CLEARING HOVER FOR MOBILE SCREENS
